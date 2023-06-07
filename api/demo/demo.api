@@ -17,6 +17,9 @@ type Response {
 }
 
 service demo-api {
+	@doc(
+		summary: "This is a demo"
+	)
 	@handler DemoHandler
 	get /from/:name(Request) returns (Response)
 }
