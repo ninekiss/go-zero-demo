@@ -1,0 +1,22 @@
+syntax = "v1";
+
+info(
+	title: "demo",
+	desc: "This is a demo"
+	author: "NineKiss"
+	email: "ninekiss2189@gmail.com"
+	version: 1.0
+)
+
+type Request {
+	Name string `path:"name,options=you|me"`
+}
+
+type Response {
+	Message string `json:"message"`
+}
+
+service demo-api {
+	@handler DemoHandler
+	get /from/:name(Request) returns (Response)
+}
